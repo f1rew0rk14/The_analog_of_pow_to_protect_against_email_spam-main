@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+   .textField {
+    width: 50%; /* Ширина поля */
+    padding: 20px; /* Поля */
+    box-sizing: content-box; /* Алгоритм расчёта ширины */
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.2); /* Тень внутри */
+    border: 1px solid #ccc; /* Параметры рамки */
+    color: #ff6d37; /* Цвет текста */
+   }
+   body {
+  background: #d6eaf8;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #ffffff;
+    background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+    right: -3%;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-16 {
+  border: none;
+  color: #000;
+  z-index: 1;
+}
+.btn-16:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  transition: all 0.3s ease;
+}
+.btn-16:hover {
+  color: #000;
+}
+.btn-16:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+.btn-16:active {
+  top: 2px;
+}
+  </style>
+    <title>Title</title>
+    <script src="Parameters.js" type="module"></script>
+    <script src="client.js" type="module"></script>
+    <script src="fetch.js" type="module"></script>
+</head>
+<body>
+<h1>Send your message</h1>
+    <form id="form">
+        <textarea cols="60" rows="10" type="text" size="50" name="textField" class="textField"></textarea>
+        <button type="submit" class="custom-btn btn-16" >Send</button>
+    </form>
+    <script src="get_input_data.js" type="module"></script>
+<h2></h2>
+<h3>После отправки сообщения ожидайте <span id="time"></span> секунд(ы)</h3>
+</body>
+</html>
